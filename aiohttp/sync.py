@@ -5,7 +5,7 @@ import requests
 from time import perf_counter
 
 SITE = "https://thispersondoesnotexist.com"
-IMAGE_COUNT = 50
+IMAGE_COUNT = 1
 
 def generate_filename(file_extension):
     temp = str(int(time.time()))
@@ -19,7 +19,7 @@ def main():
         extension = response.headers["content-type"].split('/')[-1]
         filename = generate_filename(extension)
 
-        with open(os.path.join("aiohttp/images", filename), "wb") as file:
+        with open(os.path.join("aiohttp\images", filename), "wb") as file:
             file.write(response.content)
         print(f"image: {image_num + 1} finished...")
 
