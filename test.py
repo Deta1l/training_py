@@ -90,12 +90,15 @@ def merge_xlsx_files(input_folder, output_file):
         print("Нет данных для сохранения.")
 
 if __name__ == "__main__":
+
+    folder_path = '/home/deta1l/Рабочий стол/training_py/miks_driverstats'
+    os.rmdir(folder_path)
     # 1. Скачиваем файлы гонок
     download_races()
     
     # 2. Объединяем скачанные файлы
     input_folder = "miks_driverstats"
-    output_file = "C:/Users/MPyankov/Desktop/teat_analys/output3.xlsx"
+    output_file = "/home/deta1l/Рабочий стол/training_py/output3.xlsx"
     
     if os.path.exists(input_folder):
         merge_xlsx_files(input_folder, output_file)
